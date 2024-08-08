@@ -23,7 +23,7 @@
         efiInstallAsRemovable = true;
     };
     fileSystems."/boot" = {
-        device = "/dev/vda1";  # /dev/disk/by-label/ESP
+        device = lib.mkForce "/dev/vda1";  # /dev/disk/by-label/ESP
         fsType = "vfat";
     };
     fileSystems."/" = {

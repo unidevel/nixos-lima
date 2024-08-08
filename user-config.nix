@@ -25,10 +25,10 @@
 
     programs.fish.enable = true;
 
-    users.users.josh = {
+    users.users.jerry = {
         shell = "/run/current-system/sw/bin/fish";
         isNormalUser = true;
         group = "users";
-        home = "/home/josh.linux";
+        home = "/home/jerry";
     }; # Settings need to be specified here too so folders aren't overwritten/wiped
 }

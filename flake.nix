@@ -12,9 +12,9 @@
     let
       ful = flake-utils.lib;
     in
-    ful.eachSystem [ ful.system.x86_64-linux ful.system.aarch64-linux ] (system:
+    ful.eachDefaultSystem(system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       {
         packages = {
@@ -25,6 +25,7 @@
             ];
             format = "raw-efi";
           };
+	  default = self.packages.${system}.img;
         };
       }) // { 
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
