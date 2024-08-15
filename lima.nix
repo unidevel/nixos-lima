@@ -9,7 +9,7 @@
 
     # ssh
     services.openssh.enable = true;
-    services.openssh.permitRootLogin = "yes";
+    services.openssh.settings.PermitRootLogin = "yes";
     users.users.root.password = "nixos";
 
     security = {
@@ -38,6 +38,7 @@
 
     # pkgs
     environment.systemPackages = with pkgs; [
+        tzdata
         vim
     ];
 }

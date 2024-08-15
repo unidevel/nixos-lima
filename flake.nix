@@ -23,7 +23,7 @@
             modules = [
               ./lima.nix
             ];
-            format = "raw-efi";
+            format = "qcow-efi";
           };
 	  default = self.packages.${system}.img;
         };
